@@ -1,0 +1,25 @@
+{
+  "name": "baby-buttler",
+  "version": "1.0.0",
+  "description": "baby buttlleeeeerrrr",
+  "main": "bot.js",
+  "author": "Your Name",
+  "scripts": {
+    "start": "tsc && node dist/app.js"
+  },
+  "dependencies": {
+    "discord.io": "github:woor/discord.io#gateway_v6",
+    "flat-combine-reducers": "^0.1.2",
+    "ramda": "0.26.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-observable": "^1.2.0",
+    "rxjs": "^6.5.5",
+    "typesafe-actions": "^5.1.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  }
+}
