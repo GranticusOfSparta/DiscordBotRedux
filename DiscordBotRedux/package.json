@@ -1,7 +1,7 @@
 {
-  "name": "baby-buttler",
+  "name": "discord-bot-redux",
   "version": "1.0.0",
-  "description": "baby buttlleeeeerrrr",
+  "description": "A POC of a discord bot made with redux and typescript",
   "main": "bot.js",
   "author": "Your Name",
   "scripts": {
