@@ -7,12 +7,12 @@ import { DefaultActions } from './actions';
 import { getInitialState } from './initial-state';
 import { dispatch } from 'rxjs/internal/observable/range';
 import { createLogger } from 'redux-logger'
+import { classToObject } from './customMiddleWare/classToObject';
+import { logger } from './customMiddleWare/logger';
 
 
 export const initializeState = () => {
-    const logger = createLogger({
-        // ...options
-    });
+
 
     const epicMiddleware = createEpicMiddleware();
 
@@ -23,7 +23,7 @@ export const initializeState = () => {
     let store = createStore(
         rootReducers,
         getInitialState(),
-        applyMiddleware(epicMiddleware, logger)
+        applyMiddleware(epicMiddleware, logger, classToObject)
     );
     epicMiddleware.run(rootEpic);
     return store;

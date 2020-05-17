@@ -11,6 +11,7 @@ export enum ActionTypes {
     SAY_SUCCESS = "[default] SAY_SUCCESS"
 
 }
+
 export class MapToAction implements Action {
     readonly type = ActionTypes.MAP_TO_ACTION;
     constructor(public payload: MessageEventData) {

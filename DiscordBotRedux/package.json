@@ -8,6 +8,7 @@
     "start": "tsc && node dist/app.js"
   },
   "dependencies": {
+    "console-group": "^0.3.3",
     "discord.io": "github:woor/discord.io#gateway_v6",
     "flat-combine-reducers": "^0.1.2",
     "ramda": "0.26.1",
