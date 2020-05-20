@@ -1,14 +1,13 @@
-import { RootState } from './../models';
-import { Action } from 'redux'
+import { MessageEventData } from './../models/message-event-data';
 import { Maybe } from '../monads';
-import { getInitialState } from '../initial-state';
 import { DefaultActions } from '../actions';
-function sayReducer(state = getInitialState(), action: DefaultActions.Say): RootState {
-    console.log("I'm about to compare", action.type)
+export function sayReducer(state, action: DefaultActions.Say): Maybe<MessageEventData> {
+    debugger;
     switch (action.type) {
         case DefaultActions.ActionTypes.SAY:
-            return { ...state, say: Maybe.of(action.payload) }
+            return Maybe.of(action.payload)
+        default:
+            return state ? state : Maybe.nothing();
     }
 }
 
-export const defaultReducers = [sayReducer];

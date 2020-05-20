@@ -15,7 +15,7 @@ bot.on('ready', function () {
 });
 
 bot.on('message', function (user, userID, channelID, message, event) {
-
+    debugger;
     if (user !== "Baby Buttler")
         store.dispatch(Object.create(new Say({ user, userID, channelID, message, event: "" })));
 });

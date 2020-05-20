@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
-import { defaultReducers } from "./default";
+import { sayReducer } from "./default";
 import flatCombineReducers from 'flat-combine-reducers';
 import { fromEventPattern } from "rxjs";
-let rootReducers = flatCombineReducers([...defaultReducers])
+let rootReducers = combineReducers({
+    say: sayReducer
+})
+console.log(rootReducers);
 export { rootReducers }

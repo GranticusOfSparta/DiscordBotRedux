@@ -5,7 +5,9 @@
   "main": "bot.js",
   "author": "Your Name",
   "scripts": {
-    "start": "tsc && node dist/app.js"
+    "start": "tsc && node dist/app.js",
+    "debug": "tsc && node --inspect=8080 dist/app.js"
+
   },
   "dependencies": {
     "console-group": "^0.3.3",
@@ -24,3 +26,4 @@
     "typescript": "^3.3.3"
   }
 }
+
