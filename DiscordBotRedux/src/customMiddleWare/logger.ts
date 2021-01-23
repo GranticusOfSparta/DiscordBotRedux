@@ -1,9 +1,10 @@
-import { Middleware, Action } from "redux";
+import { Middleware } from "redux";
 import * as _ from "lodash";
+import { AboutAction, Action } from "../models/action";
 export const logger: Middleware = (api) =>
     (next) =>
-        (action) => {
-            const plainAction = { type: action.type, payload: action.payload }
+        (action: Action) => {
+            const plainAction: Action = { type: action.type, payload: action.payload, aboutAction: action.aboutAction ? action.aboutAction : AboutAction.DEFUALT }
 
             console.groupCollapsed(action.type);
             console.log('prev state', api.getState());

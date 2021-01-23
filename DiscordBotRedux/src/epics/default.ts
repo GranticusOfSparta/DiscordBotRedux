@@ -1,6 +1,6 @@
 import { ofType } from "redux-observable";
 import { DefaultActions } from "../actions";
-import { SaySuccess, Say, CMDExecutionError } from "../actions/default";
+import { SaySuccess, Say, CMDExecutionError, MapToAction } from "../actions/default";
 import { tap, map, catchError, filter } from 'rxjs/operators'
 import { bot } from '../bot'
 export const sayEpic = (action$, store$, dependencies) => {
@@ -19,4 +19,14 @@ export const sayEpic = (action$, store$, dependencies) => {
     )
 };
 
-export const defaultEpics = [sayEpic];
+export const mapToActionEpic = (action$, store$, dependencies) => {
+    return action$.pipe(
+        ofType(DefaultActions.ActionTypes.MAP_TO_ACTION),
+        map((action: MapToAction) => {
+            return new Say(action.payload);
+        })
+        // filter(() => false)
+    )
+};
+
+export const defaultEpics = [sayEpic, mapToActionEpic];

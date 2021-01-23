@@ -1,5 +1,5 @@
-import { MessageEventData } from '../models';
-import { Action } from 'redux';
+import { AboutAction } from './../models/action';
+import { MessageEventData, Action } from '../models';
 
 export enum ActionTypes {
     MAP_TO_ACTION = "[default] MAP_TO_ACTION",
@@ -31,6 +31,7 @@ export class MapToActionFailure implements Action {
 
 export class Say implements Action {
     readonly type = ActionTypes.SAY;
+    static aboutAction = AboutAction.INITIAL_ACTION;
     constructor(public payload: MessageEventData) { }
 }
 export class SaySuccess implements Action {
