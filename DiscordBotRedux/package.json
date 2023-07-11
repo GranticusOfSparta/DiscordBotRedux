@@ -9,7 +9,7 @@
     "debug": "tsc && node --inspect=8080 dist/app.js"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
+    "cheerio": "^1.0.0-rc.12",
     "axios": "^0.21.2",
     "console-group": "^0.3.3",
     "discord.io": "github:woor/discord.io#gateway_v6",
